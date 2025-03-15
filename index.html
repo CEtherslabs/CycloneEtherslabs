@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclone Etherslabs - Transforming Ideas into Digital Excellence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#0A0A0A]">
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="logo-container flex-shrink-0">
+                    <img src="logo.png" 
+                         alt="Cyclone Etherslabs" 
+                         class="h-[90px] md:h-[100px] w-auto">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 ml-12">
+                    <a href="#home" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Home</a>
+                    <a href="#services" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Services</a>
+                    <a href="#process" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Process</a>
+                    <a href="#about" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">About</a>
+                    <a href="#contact" class="btn-cyber px-6 py-2 rounded-lg text-base w-full">Contact</a>
+                    <!--button class="btn-cyber px-6 py-2 rounded-lg text-base">Get Started</button-->
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="menu-button" id="menuBtn" aria-label="Toggle Menu">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed w-full top-[110px] left-0 z-40 hidden" id="mobileMenu">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col space-y-6">
+                <a href="#home" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Home</a>
+                <a href="#services" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Services</a>
+                <a href="#process" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Process</a>
+                <a href="#about" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">About</a>
+                <a href="#contact" class="btn-cyber px-6 py-2 rounded-lg text-base w-full">Contact</a>
+                <!--button class="btn-cyber px-6 py-2 rounded-lg text-base w-full">Get Started</button-->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-40 pb-20 relative overflow-hidden">
+        <div class="hexagon-bg absolute inset-0"></div>
+        <div class="container mx-auto px-4 relative">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4 text-[#00FF00] tracking-wider" style="text-shadow: 0 0 10px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.3), 0 0 30px rgba(0, 255, 0, 0.2);">
+                        CYCLONE ETHERSLABS
+                    </h1>
+
+                    <p class="text-[#94A3B8] text-lg mb-8">
+                        At Cyclone Etherslabs, we're more than just developers, we're your digital transformation partners. Our name embodies our core values: the unstoppable force of a cyclone combined with the limitless possibilities of the digital ether.
+                    </p>
+                    <button class="btn-cyber px-8 py-3 rounded-lg text-lg font-semibold">
+                        Schedule Free Consultation
+                    </button>
+                </div>
+                <div class="md:w-1/2 flex justify-center items-center">
+                    <div class="laptop-wrapper">
+                        <div class="laptop">
+                            <div class="laptop-screen">
+                                <div class="code-animation">
+                                    // Cyclone Etherslabs
+                                    class Innovation {
+                                        constructor() {
+                                            this.vision = "digital excellence";
+                                            this.technology = ["AI", "Web3", "Cloud"];
+                                        }
+                                        
+                                        transform(ideas) {
+                                            return ideas.map(idea => 
+                                                this.innovate(idea)
+                                            );
+                                        }
+
+                                        innovate(concept) {
+                                            return {
+                                                result: "excellence",
+                                                powered: "AI-enhanced",
+                                                delivery: "rapid"
+                                            };
+                                        }
+                                    }
+
+                                    // Creating digital excellence
+                                    const future = new Innovation();
+                                    future.transform(yourIdeas);
+                                </div>
+                            </div>
+                            <div class="laptop-keyboard"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 glow text-[#00FF80]">Why Choose Us?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="tech-card p-6 rounded-lg">
+                    <div class="text-[#00FF00] mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-[#00FF80]">Vision-First Development</h3>
+                    <p class="text-[#94A3B8]">Your vision isn't just a starting point – it's our blueprint. We don't compromise on your ideas; we enhance them with our technical expertise.</p>
+                </div>
+                <div class="tech-card p-6 rounded-lg">
+                    <div class="text-[#00FF00] mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-[#00FF80]">AI-Enhanced Development</h3>
+                    <p class="text-[#94A3B8]">We leverage artificial intelligence to accelerate development and crystallize ideas, ensuring faster delivery without sacrificing quality.</p>
+                </div>
+                <div class="tech-card p-6 rounded-lg">
+                    <div class="text-[#00FF00] mb-4">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-[#00FF80]">Specialized Expertise</h3>
+                    <p class="text-[#94A3B8]">Our team of 10 skilled professionals brings specialized expertise in frontend, backend, UI/UX, QA, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 relative">
+        <div class="hexagon-bg absolute inset-0"></div>
+        <div class="container mx-auto px-4 relative">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 glow text-[#00FF80]">Our Development Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="tech-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-[#00FF80]">1. Discovery & Planning</h3>
+                    <ul class="space-y-2 text-[#94A3B8]">
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            Virtual consultation
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            In-depth requirement gathering
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            Technology stack selection
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            Project timeline planning
+                        </li>
+                    </ul>
+                </div>
+                <div class="tech-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-[#00FF80]">2. Design & Architecture</h3>
+                    <ul class="space-y-2 text-[#94A3B8]">
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            UI/UX wireframing
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            System architecture design
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            Security protocol planning
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            Database optimization
+                        </li>
+                    </ul>
+                </div>
+                <div class="tech-card p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-[#00FF80]">3. Development</h3>
+                    <ul class="space-y-2 text-[#94A3B8]">
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            Agile methodology
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            Regular client updates
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            AI-enhanced development
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-[#00FF00] mr-2">→</span>
+                            Continuous integration
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 glow text-[#00FF80]">Ready to Build Your Future?</h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6" action="https://formspree.io/f/meoepkre" method="POST">
+                    <div>
+                        <label for="name" class="block text-[#F1F5F9] mb-2">Name</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full px-4 py-2 rounded-lg bg-[#121212] border border-[#004D00] focus:border-[#00FF00] text-[#F1F5F9]">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-[#F1F5F9] mb-2">Email</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-4 py-2 rounded-lg bg-[#121212] border border-[#004D00] focus:border-[#00FF00] text-[#F1F5F9]">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-[#F1F5F9] mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-2 rounded-lg bg-[#121212] border border-[#004D00] focus:border-[#00FF00] text-[#F1F5F9]"></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="New consultation request from website">
+                    <input type="hidden" name="_next" value="https://cycloneetherslabs.com/thank-you">
+                    <button type="submit" class="btn-cyber btn-submit w-full py-4 rounded-lg text-lg font-semibold transition-all duration-300 ease-in-out transform hover:scale-[1.02]">
+                        Schedule Free Consultation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-[#004D00]">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="logo.png" alt="Cyclone Etherslabs" class="h-12 mb-4">
+                    <p class="text-[#94A3B8]">Transforming ideas into digital reality through innovation and excellence.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-[#00FF80]">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">Services</a></li>
+                        <li><a href="#process" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">Process</a></li>
+                        <li><a href="#contact" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-[#00FF80]">Contact</h4>
+                    <ul class="space-y-2 text-[#94A3B8]">
+                        <li>Abuja, Nigeria</li>
+                        <li>cycloneetherslabs@gmail.com</li>
+                        <li>Virtual Meetings Available</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-[#00FF80]">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://x.com/CEtherslabs" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/cycloneetherslabs" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-[#004D00] mt-12 pt-8 text-center text-[#94A3B8]">
+                <p>&copy; 2024 Cyclone Etherslabs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
