@@ -7,17 +7,77 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../styles.css">
     <style>
-        /* Update the text colors to be visible */
+        /* Base text colors */
         body {
             color: #F1F5F9;
         }
-        
-        .slide-in-left, .slide-in-right, .fade-in {
-            opacity: 1; /* Make sure animations don't hide content */
+
+        /* Fix animation visibility */
+        .slide-in-left, 
+        .slide-in-right, 
+        .fade-in {
+            opacity: 1;
+            animation: none; /* Temporarily disable animations until they're visible */
         }
 
         .animate-on-scroll {
-            opacity: 1; /* Default visible state */
+            opacity: 1 !important; /* Force visibility */
+        }
+
+        /* Update animation keyframes */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0.3;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0.3;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0.3;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Ensure headings are visible */
+        h1, h2, h3, h4, h5, h6 {
+            color: #00FF00;
+        }
+
+        /* Ensure text content is visible */
+        p, li, span {
+            color: #94A3B8;
+        }
+
+        /* Fix image visibility */
+        img {
+            opacity: 1;
+            display: block;
+        }
+
+        /* Update the animation trigger */
+        .animate-on-scroll.active {
+            opacity: 1;
+            animation: fadeIn 0.8s ease-out forwards;
         }
 
         /* Navbar styling */
@@ -55,39 +115,6 @@
         .fade-in {
             animation: fadeIn 1s ease-out;
         }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
 
         .animate-on-scroll {
             opacity: 0;
@@ -95,6 +122,64 @@
 
         .animate-on-scroll.active {
             opacity: 1;
+        }
+
+        /* Add to existing styles */
+        .menu-button {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            background: none;
+            border: none;
+        }
+
+        .hamburger {
+            width: 100%;
+            height: 2px;
+            background-color: #00FF00;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            transition: background-color 0.3s;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #00FF00;
+            transition: transform 0.3s;
+        }
+
+        .hamburger::before {
+            top: -8px;
+        }
+
+        .hamburger::after {
+            bottom: -8px;
+        }
+
+        .menu-button.active .hamburger {
+            background-color: transparent;
+        }
+
+        .menu-button.active .hamburger::before {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-button.active .hamburger::after {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #004D00;
         }
     </style>
 </head>
@@ -121,7 +206,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button class="menu-button" id="menuBtn" aria-label="Toggle Menu">
+                    <button class="menu-button" id="menuButton" aria-label="Toggle Menu">
                         <span class="hamburger"></span>
                     </button>
                 </div>
@@ -130,7 +215,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu fixed w-full top-[110px] left-0 z-40 hidden" id="mobileMenu">
+    <div class="mobile-menu fixed w-full top-[90px] left-0 z-40 hidden bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#004D00]" id="mobileMenu">
         <div class="container mx-auto px-4 py-6">
             <div class="flex flex-col space-y-6">
                 <a href="../index.html" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Home</a>
@@ -146,8 +231,8 @@
     <section class="pt-40 pb-20 relative overflow-hidden">
         <div class="hexagon-bg absolute inset-0"></div>
         <div class="container mx-auto px-4 relative">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-center glow">Our Services</h1>
-            <p class="text-[#94A3B8] text-lg text-center mb-12 max-w-3xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-center text-[#00FF00]">Our Services</h1>
+            <p class="text-[#94A3B8] text-lg text-center mb-12 max-w-3xl mx-auto opacity-100">
                 Transform your digital vision into reality with our comprehensive suite of services. We specialize in creating custom solutions that drive your business forward.
             </p>
         </div>
@@ -248,7 +333,7 @@
     <!-- Technology Stack -->
     <section class="py-20 bg-[#1a1a1a]">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Our Technology Stack</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-[#00FF00]">Our Technology Stack</h2>
             <div class="flex flex-col md:flex-row items-center gap-12 animate-on-scroll">
                 <div class="md:w-1/2 slide-in-left">
                     <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80" 
@@ -531,12 +616,27 @@
         // Mobile menu toggle
         const menuButton = document.getElementById('menuButton');
         const mobileMenu = document.getElementById('mobileMenu');
+        const navbar = document.getElementById('mainNav');
 
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuButton.classList.toggle('active');
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
 
-        // Intersection Observer for scroll animations
+        // Update the Intersection Observer
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -546,15 +646,31 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Add animations only after element is visible
+                    if (entry.target.classList.contains('slide-in-left')) {
+                        entry.target.style.animation = 'slideInLeft 0.8s ease-out forwards';
+                    } else if (entry.target.classList.contains('slide-in-right')) {
+                        entry.target.style.animation = 'slideInRight 0.8s ease-out forwards';
+                    }
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Stop observing once animated
                 }
             });
         }, observerOptions);
 
-        // Observe all elements with animate-on-scroll class
-        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+        // Observe all animated elements
+        document.querySelectorAll('.animate-on-scroll, .slide-in-left, .slide-in-right').forEach((element) => {
             observer.observe(element);
+        });
+
+        // Ensure content is visible even if JavaScript fails
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.animate-on-scroll, .slide-in-left, .slide-in-right').forEach((element) => {
+                    if (!element.classList.contains('active')) {
+                        element.style.opacity = '1';
+                    }
+                });
+            }, 1000);
         });
     </script>
 </body>

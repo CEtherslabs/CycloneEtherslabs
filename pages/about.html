@@ -54,7 +54,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button class="menu-button" id="menuBtn" aria-label="Toggle Menu">
+                    <button class="menu-button" id="menuButton" aria-label="Toggle Menu">
                         <span class="hamburger"></span>
                     </button>
                 </div>
@@ -120,10 +120,19 @@
     </footer>
 
     <script>
-        // Navbar scroll effect
+        // Mobile menu toggle
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
         const navbar = document.getElementById('mainNav');
-        let lastScroll = 0;
 
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                menuButton.classList.toggle('active');
+            });
+        }
+
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
             
@@ -132,16 +141,6 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Mobile menu toggle
-        const menuButton = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
         });
     </script>
 </body>
