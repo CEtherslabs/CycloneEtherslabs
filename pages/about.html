@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Cyclone Etherslabs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Same navbar and animation styles as index.html */
+        .navbar {
+            background: transparent;
+            backdrop-filter: blur(0);
+        }
+
+        .navbar.scrolled {
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #004D00;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-[#0A0A0A] text-[#F1F5F9]">
+    <!-- Copy Navigation from index.html -->
+    <nav class="navbar fixed w-full z-50 transition-all duration-300" id="mainNav">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="logo-container flex-shrink-0">
+                    <img src="../logo.png" 
+                         alt="Cyclone Etherslabs" 
+                         class="h-[90px] md:h-[100px] w-auto">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 ml-12">
+                    <a href="../index.html" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Home</a>
+                    <a href="services.html" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Services</a>
+                    <a href="../index.html#process" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Process</a>
+                    <a href="#" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">About</a>
+                    <a href="../index.html#contact" class="btn-cyber px-6 py-2 rounded-lg text-base w-full">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="menu-button" id="menuBtn" aria-label="Toggle Menu">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed w-full top-[110px] left-0 z-40 hidden" id="mobileMenu">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col space-y-6">
+                <a href="../index.html" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Home</a>
+                <a href="services.html" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Services</a>
+                <a href="../index.html#process" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Process</a>
+                <a href="#" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">About</a>
+                <a href="../index.html#contact" class="btn-cyber px-6 py-2 rounded-lg text-base w-full">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Content Here -->
+    <section class="pt-40 pb-20">
+        <!-- Add your about page content here -->
+    </section>
+
+    <!-- Copy Footer from index.html -->
+    <footer class="py-12 border-t border-[#004D00]">
+        <!-- Same footer content as index.html -->
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="../logo.png" alt="Cyclone Etherslabs" class="h-12 mb-4">
+                    <p class="text-[#94A3B8]">Transforming ideas into digital reality through innovation and excellence.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-[#00FF80]">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">Services</a></li>
+                        <li><a href="../index.html#process" class="text-[#94A3B8] hover:text-[#00FF00] transition-colors">Process</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-[#00FF80]">Contact</h4>
+                    <ul class="space-y-2 text-[#94A3B8]">
+                        <li>Abuja, Nigeria</li>
+                        <li><a href="https://wa.me/+2349136914328">Whatsapp</a></li>
+                        <li>cycloneetherslabs@gmail.com</li>
+                        <li>Virtual Meetings Available</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-[#00FF80]">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <!-- Social media icons from index.html -->
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-[#004D00] mt-12 pt-8 text-center text-[#94A3B8]">
+                <p>&copy; 2024 Cyclone Etherslabs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('mainNav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Mobile menu toggle
+        const menuButton = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
