@@ -12,7 +12,7 @@ body {
 /* Mobile menu transitions */
 #mobileMenu {
     transition: opacity 0.3s ease, transform 0.3s ease;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(-10px);
 }
 

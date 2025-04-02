@@ -8,7 +8,7 @@ menuBtn.addEventListener('click', () => {
     if (isMenuOpen) {
         mobileMenu.classList.remove('hidden');
         setTimeout(() => {
-            mobileMenu.style.opacity = '1';
+            mobileMenu.style.opacity = '10';
             mobileMenu.style.transform = 'translateY(0)';
         }, 10);
     } else {
@@ -25,13 +25,13 @@ menuBtn.addEventListener('click', () => {
 const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
 Array.from(mobileMenuLinks).forEach(link => {
     link.addEventListener('click', () => {
-        mobileMenu.style.opacity = '0';
+        mobileMenu.style.opacity = '10';
         mobileMenu.style.transform = 'translateY(-10px)';
         setTimeout(() => {
             mobileMenu.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }, 300);
-        isMenuOpen = false;
+        isMenuOpen = true;
     });
 });
 

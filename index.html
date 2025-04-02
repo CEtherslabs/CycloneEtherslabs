@@ -9,31 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .navbar {
-            background: transparent;
-            backdrop-filter: blur(0);
-        }
+    <link rel="stylesheet" href="./styles/nav.css">
 
-        .navbar.scrolled {
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #004D00;
-        }
-
-        /* Smoother animations */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 </head>
+
+
 <body class="bg-[#0A0A0A]">
     <!-- Navigation -->
     <nav class="navbar fixed w-full z-50 transition-all duration-300" id="mainNav">
@@ -333,51 +313,7 @@
         </div>
     </footer>
 
-    <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('mainNav');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            
-            lastScroll = currentScroll;
-        });
-
-        // Smooth scroll animation
-        const animateElements = document.querySelectorAll('.services-card, .process-card, .tech-card');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        // Add fade-in-up class to elements you want to animate
-        animateElements.forEach(element => {
-            element.classList.add('fade-in-up');
-            observer.observe(element);
-        });
-
-        // Mobile menu toggle
-        const menuButton = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
+    <script src="./js/nav.js"></script>
     <script src="script.js"></script>
     <script src="form-handler.js"></script>
 </body>

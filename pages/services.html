@@ -4,197 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Cyclone Etherslabs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../styles.css">
-    <style>
-        /* Base text colors */
-        body {
-            color: #F1F5F9;
-        }
-
-        /* Fix animation visibility */
-        .slide-in-left, 
-        .slide-in-right, 
-        .fade-in {
-            opacity: 1;
-            animation: none; /* Temporarily disable animations until they're visible */
-        }
-
-        .animate-on-scroll {
-            opacity: 1 !important; /* Force visibility */
-        }
-
-        /* Update animation keyframes */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0.3;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0.3;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0.3;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Ensure headings are visible */
-        h1, h2, h3, h4, h5, h6 {
-            color: #00FF00;
-        }
-
-        /* Ensure text content is visible */
-        p, li, span {
-            color: #94A3B8;
-        }
-
-        /* Fix image visibility */
-        img {
-            opacity: 1;
-            display: block;
-        }
-
-        /* Update the animation trigger */
-        .animate-on-scroll.active {
-            opacity: 1;
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        /* Navbar styling */
-        .navbar {
-            background: transparent;
-            backdrop-filter: blur(0);
-        }
-
-        .navbar.scrolled {
-            background: rgba(18, 18, 18, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #004D00;
-        }
-
-        /* Smoother animations */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-in-left {
-            animation: slideInLeft 0.8s ease-out;
-        }
-        
-        .slide-in-right {
-            animation: slideInRight 0.8s ease-out;
-        }
-        
-        .fade-in {
-            animation: fadeIn 1s ease-out;
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-        }
-
-        .animate-on-scroll.active {
-            opacity: 1;
-        }
-
-        /* Add to existing styles */
-        .menu-button {
-            width: 30px;
-            height: 30px;
-            position: relative;
-            cursor: pointer;
-            padding: 0;
-            background: none;
-            border: none;
-            z-index: 50;
-        }
-
-        .hamburger {
-            width: 100%;
-            height: 2px;
-            background-color: #00FF00;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            transition: background-color 0.3s;
-        }
-
-        .hamburger::before,
-        .hamburger::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: #00FF00;
-            transition: transform 0.3s;
-        }
-
-        .hamburger::before {
-            top: -8px;
-        }
-
-        .hamburger::after {
-            bottom: -8px;
-        }
-
-        .menu-button.active .hamburger {
-            background-color: transparent;
-        }
-
-        .menu-button.active .hamburger::before {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-button.active .hamburger::after {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        .mobile-menu {
-            position: fixed;
-            width: 100%;
-            top: 90px;
-            left: 0;
-            z-index: 40;
-            background-color: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #004D00;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease-in-out;
-            display: block !important; /* Remove hidden class handling */
-        }
-
-        .mobile-menu.active {
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="../css/nav.css">
 </head>
 <body class="bg-[#0A0A0A]">
     <!-- Navigation -->
@@ -211,9 +26,9 @@
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8 ml-12">
                     <a href="../index.html" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Home</a>
-                    <a href="#" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Services</a>
+                    <a href="./services.html" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Services</a>
                     <a href="../index.html#process" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">Process</a>
-                    <a href="about.html" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">About</a>
+                    <a href="./about.html" class="nav-link text-[#F1F5F9] hover:text-[#00FF00] text-lg">About</a>
                     <a href="../index.html#contact" class="btn-cyber px-6 py-2 rounded-lg text-base w-full">Contact</a>
                 </div>
 
@@ -232,9 +47,9 @@
         <div class="container mx-auto px-4 py-6">
             <div class="flex flex-col space-y-6">
                 <a href="../index.html" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Home</a>
-                <a href="#" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Services</a>
+                <a href="#services" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Services</a>
                 <a href="../index.html#process" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">Process</a>
-                <a href="about.html" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">About</a>
+                <a href="./about.html" class="text-[#F1F5F9] hover:text-[#00FF00] text-lg transition-colors">About</a>
                 <a href="../index.html#contact" class="btn-cyber px-6 py-2 rounded-lg text-base w-full">Contact</a>
             </div>
         </div>
@@ -574,7 +389,7 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <img src="logo.png" alt="Cyclone Etherslabs" class="h-12 mb-4">
+                    <img src="../logo.png" alt="Cyclone Etherslabs" class="h-12 mb-4">
                     <p class="text-[#94A3B8]">Transforming ideas into digital reality through innovation and excellence.</p>
                 </div>
                 <div>
@@ -624,83 +439,8 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        const menuButton = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const navbar = document.getElementById('mainNav');
-
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
-                menuButton.classList.toggle('active');
-            });
-
-            // Close menu when clicking on a link
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('active');
-                    menuButton.classList.remove('active');
-                });
-            });
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.remove('active');
-                menuButton.classList.remove('active');
-            }
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Update the Intersection Observer
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Add animations only after element is visible
-                    if (entry.target.classList.contains('slide-in-left')) {
-                        entry.target.style.animation = 'slideInLeft 0.8s ease-out forwards';
-                    } else if (entry.target.classList.contains('slide-in-right')) {
-                        entry.target.style.animation = 'slideInRight 0.8s ease-out forwards';
-                    }
-                    entry.target.classList.add('active');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.animate-on-scroll, .slide-in-left, .slide-in-right').forEach((element) => {
-            observer.observe(element);
-        });
-
-        // Ensure content is visible even if JavaScript fails
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelectorAll('.animate-on-scroll, .slide-in-left, .slide-in-right').forEach((element) => {
-                    if (!element.classList.contains('active')) {
-                        element.style.opacity = '1';
-                    }
-                });
-            }, 1000);
-        });
-    </script>
+    
+    <script src="../js/nav.js"></script>
+    <script src="../scripts.js"></script>
 </body>
 </html>
